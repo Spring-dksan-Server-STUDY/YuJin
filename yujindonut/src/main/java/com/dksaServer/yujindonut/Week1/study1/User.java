@@ -1,4 +1,4 @@
-package com.dksaServer.yujindonut.study1;
+package com.dksaServer.yujindonut.Week1.study1;
 
 public class User {
     private int id;
