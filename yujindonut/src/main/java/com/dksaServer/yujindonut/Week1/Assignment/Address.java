@@ -11,4 +11,9 @@ public class Address {
         this.gu = gu;
         this.dong = dong;
     }
+
+    @Override
+    public String toString() {
+        return "주소는 " + city + gu + dong + "입니다";
+    }
 }
