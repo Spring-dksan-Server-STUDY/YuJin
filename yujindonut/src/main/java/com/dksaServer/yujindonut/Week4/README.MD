@@ -47,3 +47,35 @@ WHERE NAME IS NULL;
 조건 :
 이름이 없는 동물의 ID 조회
 ID는 오름차순으로 = ASC (생략가능)
+
+### JOIN
+##### 없어진 기록 찾기
+````
+SELECT B.ANIMAL_ID, B.NAME
+FROM ANIMAL_INS A RIGHT JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE A.ANIMAL_ID IS NULL;
+````
+풀이 :
+입양은 나갔는데 보호소에 들어온 기록이 없다 => 입양 나간 테이블쪽으로 RIGHT JOIN
+보호소에 들어온 기록 중 NULL인 것을 찾으면 된다
+
+### STRING, DATE
+##### 루시와 엘라 찾기
+````
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN (
+'Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+ORDER BY ANIMAL_ID;
+````
+풀이 :
+동물 보호소에 들어온 동물 중 이름이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty
+WHERE NAME IN (
+'Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+
+동물의 아이디와 이름, 성별 및 중성화 여부를 조회하는 SQL 문
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+
+아이디 순으로 조회
+ORDER BY ANIMAL_ID;
