@@ -15,3 +15,12 @@ ORDER BY TOTAL_ORDER DESC
 그리고 = AND 
 아이스크림듸 주 성분이 과일이여야한다 = B.INGREDIENT_TYPE = 'fruit_based'
 조회는 주문량이 큰 순서대로 내림차순 = ORDER BY TOTAL_ORDER DESC
+
+### SUM, MAX, MIN
+##### 최대값 구하기
+````
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS;
+````
+조건 :
+가장 최근에 들어온 동물 (시간이 가장 늦은) = MAX
